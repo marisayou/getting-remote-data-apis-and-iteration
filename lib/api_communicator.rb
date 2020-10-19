@@ -24,9 +24,6 @@ def get_character_movies_from_api(character_name)
   # this collection will be the argument given to `print_movies`
   #  and that method will do some nice presentation stuff like puts out a list
   #  of movies by title. Have a play around with the puts with other info about a given film.
-
-  print_movies(films)
-  binding.pry
 end
 
 def find_hash(results, character)
@@ -49,7 +46,8 @@ end
 def print_movies(films)
   # some iteration magic and puts out the movies in a nice list
   titles = get_titles(films)
-  puts "Titles: #{titles}"
+  puts "Titles: #{titles.join(", ")}"
+  ### binding.pry
 end
 
 def get_titles(films)
@@ -61,6 +59,7 @@ end
 def show_character_movies(character)
   films = get_character_movies_from_api(character)
   print_movies(films)
+  binding.pry
 end
 
 ## BONUS
